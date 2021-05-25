@@ -69,7 +69,7 @@ def stations():
     """Return a list of stations as json"""
     session = Session(engine)
     
-    stations = session.query(Station.station).order_by(Station.station).all()
+    stations = session.query(Station.station, Station.name).order_by(Station.station).all()
     
     session.close()
 
